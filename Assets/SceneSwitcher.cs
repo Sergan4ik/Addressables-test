@@ -12,7 +12,7 @@ public class SceneSwitcher : MonoBehaviour
     {
         Debug.Log($"{sceneName} start loading");
         AsyncOperationHandle<SceneInstance> asyncOperationHandle = Addressables.LoadSceneAsync(sceneName);
-        StartCoroutine(asyncOperationHandle);
+        StartCoroutine(ConsoleLoader(asyncOperationHandle));
         await asyncOperationHandle.Task;
         Debug.Log($"{sceneName} loaded");
     }
